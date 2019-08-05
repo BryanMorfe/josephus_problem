@@ -10,7 +10,7 @@ Imagine this collection to be a circle with *n* = 10; `[1, 2, 3, 4, 5, 6, 7, 8, 
 ## Approach Solution
 This problem can be approached mathematically by applying recurrence relation rules, that is, we must define the solution to J(n) in terms of itself. In Computer Science, that is a recursive function. But first, we must find how J(n) is defined in terms of itself–find the recurrence relation. Let's build a table of the first few values and see if we can find what the recurrence relation is.  
 | n   | J(n)   |
-|-----|--------|
+| --- | ------ |
 | 1   | 1      |
 | 2   | 1      |
 | 3   | 3      |
