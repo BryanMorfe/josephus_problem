@@ -7,7 +7,9 @@
 //
 
 #include <iostream>
+#include "utest/utest.h"
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -30,47 +32,21 @@ public:
     
 };
 
-struct TestCase
-{
-    TestCase(int c, int e): computed(c), expected(e) {}
-    int computed;
-    int expected;
-};
-
-class Test
-{
-public:
-    Test(const vector<TestCase> &testCases) : tests(testCases) {}
-    void runEqualTests()
-    {
-        for (int i = 0; i < tests.size(); i++)
-        {
-            cout << "Running test " << i + 1 << "  ...";
-            
-            if (tests[i].computed != tests[i].expected)
-                cout << "  Failed." << endl;
-            else
-                cout << "  Passed." << endl;
-        }
-    }
-    
-private:
-    vector<TestCase> tests;
-};
-
 int main() {
     
-    // Run tests
-    Test test({
-        //       ---------- COMPUTED -----------     --- EXPECTED ---
-        TestCase(Solution::josephusRecursive(5),            3),
-        TestCase(Solution::josephusRecursive(6),            5),
-        TestCase(Solution::josephusRecursive(10),           5),
-        TestCase(Solution::josephusRecursive(16),           1),
-        TestCase(Solution::josephusRecursive(40),          17)
-    });
+    utest::Tester<int> tester;
+    queue<utest::TestCase<int>> tests;
     
-    test.runEqualTests();
+    // Add tests
+    //                              Computed                           Expected     Test Type
+    tests.push(utest::TestCase<int>(Solution::josephusRecursive(5),    3,           utest::testEQ));
+    tests.push(utest::TestCase<int>(Solution::josephusRecursive(6),    5,           utest::testEQ));
+    tests.push(utest::TestCase<int>(Solution::josephusRecursive(10),   5,           utest::testEQ));
+    tests.push(utest::TestCase<int>(Solution::josephusRecursive(16),   1,           utest::testEQ));
+    tests.push(utest::TestCase<int>(Solution::josephusRecursive(40),   17,          utest::testEQ));
+    
+    tester.addTest("JosephusRecursiveTests", tests);
+    tester.runTests();
     
     return 0;
 }

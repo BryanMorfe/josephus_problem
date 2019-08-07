@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		051AAF8B22F7B11600E46622 /* josephus_problem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = josephus_problem; sourceTree = BUILT_PRODUCTS_DIR; };
 		051AAF8E22F7B11600E46622 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		059B24A922F902C400F0F205 /* utest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = utest; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		051AAF8D22F7B11600E46622 /* josephus_problem */ = {
 			isa = PBXGroup;
 			children = (
+				059B24A922F902C400F0F205 /* utest */,
 				051AAF8E22F7B11600E46622 /* main.cpp */,
 			);
 			path = josephus_problem;
