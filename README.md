@@ -11,7 +11,7 @@ Imagine this collection to be a circle with *n* = 10; `[1, 2, 3, 4, 5, 6, 7, 8, 
 ## Approach Solution
 This problem can be approached mathematically by applying recurrence relation rules, that is, we must define the solution to J(n) in terms of itself. In Computer Science, that is a recursive function. But first, we must find how J(n) is defined in terms of itself–find the recurrence relation.  
 ### Finding the Recurrence Relation
-To find a recurrence relation, we have two choices; we can build a table and see if we can tell what the relation between the current J(n) and some J(n - m) values. Build a table works well when the relation is easy to see and useful to find a closed form of J(n). The second way to find a recurrent relation is to reason how it changes as we move from J(n) to J(n + 1), J(n + 2), etc.  
+To find a recurrence relation, I usually take two steps (Mathematicians, please don't hate me for ignoring for formal methods); we can build a table and see if we can tell what the relation between the current J(n) and some J(n - m) values. Build a table works well if the relation is easy to see and useful to find a closed form of J(n). However, it can also be useful to reason about the problem itself. The second step is to reason about the problem and how adjacent and non-adjacent cases are related.  
 
 Let's build a table of the first few values and see if we can find what the recurrence relation is.  
 
@@ -28,5 +28,5 @@ Let's build a table of the first few values and see if we can find what the recu
 | 9   | 3      |
 | 10  | 5      |
 
-The first thing one can notice is that J(n) is always negative (at least for our listed cases). The other thing that is always counts up by 2 but resets on every power of 2 (1, 2, 4, 8, ...), if we continued building our table, I am willing to bet that for *n* = 16, J(n) = 1. That could perhaps help us see a closed form but that is not really what we are after, so let's move on to our second approach.  
-**Note: This approach was taken from the book Concrete Mathematics, Second Edition.**   
+The first thing one can notice is that J(n) is always odd (at least for our listed cases). The reason for it is that on the first trip around the circle, we kill all even-numbered persons. The other thing that is always counts up by 2 but resets on every power of 2 (1, 2, 4, 8, ...), if we continued building our table, I am willing to bet that J(16) = 1. That could perhaps help us see a closed form, but that is not really what we are after, so let's move on to our second step.  
+**Note: This reasoning was taken from the book Concrete Mathematics, Second Edition.**   
